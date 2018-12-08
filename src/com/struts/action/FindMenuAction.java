@@ -10,7 +10,8 @@ import com.hiernate.persistence.Menu;
 import com.hiernate.util.HibernateUtil;
 //查找菜单action
 public class FindMenuAction extends DispatchAction {
-   public ActionForward findMenu(ActionMapping arg0, ActionForm arg1, HttpServletRequest arg2, HttpServletResponse arg3) throws Exception {
+   @SuppressWarnings("rawtypes")
+public ActionForward findMenu(ActionMapping arg0, ActionForm arg1, HttpServletRequest arg2, HttpServletResponse arg3) throws Exception {
 		List list = HibernateUtil.findMenu(0);         //由于主菜单的menuid为０，绑定参数０查找主菜单
 		List menuIdlist = null;
 		if(!list.isEmpty() && list.size()>0){          

@@ -4,24 +4,72 @@ package com.hiernate.persistence;
  *
  */
 public class User {
-   private int id;                //用户的id号
-   private String userName;       //用户登录系统时所用的用户名
-   private String pwd;            //用户密码
-   private String name;           //用户的真实姓名
-   private String purview;        //用户权限
-   private String branch;         //用户所在的部门
-   private String job;            //用户工作
-   private String sex;            //用户性别
-   private String email;          //用户的E-mail地址
-   private String  tel;           //用户电话
-   private String address;        //用户地址
-   private int bestMan;           //优秀员工标记
-
-public int getBestMan() {
-	return bestMan;
+   private String username;       //登录用户名
+   private String pass;            //用户密码
+   private String age;           //用户的年龄
+   private String gener;        //用户性别
+   private String birthday;         //用户出生年月
+   private String phone;            //用户电话
+   private String zjlx;            //用户证件类型
+   private String zjhm;          //用户的证件号码
+   private String  address;           //用户地址
+   private String remark1;        //备注1
+   private String remark2;           //备注2
+   private String remark3;           //备注3
+   private String remark4;           //备注4
+   private String remark5;           //备注5
+   private String roleid;           //用户角色
+   private String loginstatus;           //登录状态
+   private String logindate;           //登录日期
+   private String loginnum;           //登录时错误次数
+   private String personstatus;           //用户状态
+public String getUsername() {
+	return username;
 }
-public void setBestMan(int bestMan) {
-	this.bestMan = bestMan;
+public void setUsername(String username) {
+	this.username = username;
+}
+public String getPass() {
+	return pass;
+}
+public void setPass(String pass) {
+	this.pass = pass;
+}
+public String getAge() {
+	return age;
+}
+public void setAge(String age) {
+	this.age = age;
+}
+public String getGener() {
+	return gener;
+}
+public void setGener(String gener) {
+	this.gener = gener;
+}
+public String getBirthday() {
+	return birthday;
+}
+public void setBirthday(String birthday) {
+	this.birthday = birthday;
+}
+public String getPhone() {
+	return phone;
+}
+public void setPhone(String phone) {
+	this.phone = phone;
+}
+public String getZjlx() {
+	return zjlx;
+}
+public void setZjlx(String zjlx) {
+	this.zjlx = zjlx;
+}
+public String getZjhm() {
+	return zjhm;
+}
+public void setZjhm(String zjhm) {
+	this.zjhm = zjhm;
 }
 public String getAddress() {
 	return address;
@@ -29,65 +77,65 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
+public String getRemark1() {
+	return remark1;
+}
+public void setRemark1(String remark1) {
+	this.remark1 = remark1;
+}
+public String getRemark2() {
+	return remark2;
+}
+public void setRemark2(String remark2) {
+	this.remark2 = remark2;
+}
+public String getRemark3() {
+	return remark3;
+}
+public void setRemark3(String remark3) {
+	this.remark3 = remark3;
+}
+public String getRemark4() {
+	return remark4;
+}
+public void setRemark4(String remark4) {
+	this.remark4 = remark4;
+}
+public String getRemark5() {
+	return remark5;
+}
+public void setRemark5(String remark5) {
+	this.remark5 = remark5;
+}
+public String getRoleid() {
+	return roleid;
+}
+public void setRoleid(String roleid) {
+	this.roleid = roleid;
+}
+public String getLoginstatus() {
+	return loginstatus;
+}
+public void setLoginstatus(String loginstatus) {
+	this.loginstatus = loginstatus;
+}
+public String getLogindate() {
+	return logindate;
+}
+public void setLogindate(String logindate) {
+	this.logindate = logindate;
+}
+public String getLoginnum() {
+	return loginnum;
+}
+public void setLoginnum(String loginnum) {
+	this.loginnum = loginnum;
+}
+public String getPersonstatus() {
+	return personstatus;
+}
+public void setPersonstatus(String personstatus) {
+	this.personstatus = personstatus;
+}
 
-public String getBranch() {
-	return branch;
-}
-public void setBranch(String branch) {
-	this.branch = branch;
-}
-public String getEmail() {
-	return email;
-}
-public void setEmail(String email) {
-	this.email = email;
-}
-public int getId() {
-	return id;
-}
-public void setId(int id) {
-	this.id = id;
-}
-public String getJob() {
-	return job;
-}
-public void setJob(String job) {
-	this.job = job;
-}
-public String getName() {
-	return name;
-}
-public void setName(String name) {
-	this.name = name;
-}
-public String getPurview() {
-	return purview;
-}
-public void setPurview(String purview) {
-	this.purview = purview;
-}
-public String getPwd() {
-	return pwd;
-}
-public void setPwd(String pwd) {
-	this.pwd = pwd;
-}
-public String getSex() {
-	return sex;
-}
-public void setSex(String sex) {
-	this.sex = sex;
-}
-public String getTel() {
-	return tel;
-}
-public void setTel(String tel) {
-	this.tel = tel;
-}
-public String getUserName() {
-	return userName;
-}
-public void setUserName(String userName) {
-	this.userName = userName;
-}
 }

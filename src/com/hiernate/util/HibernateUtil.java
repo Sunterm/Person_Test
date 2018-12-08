@@ -10,13 +10,14 @@ public class HibernateUtil {
    static GetHibernate hib = new GetHibernate();  //创建
 	
 // 按照用户名和密码寻找用户
+	@SuppressWarnings("rawtypes")
 	public static List findUser(String strUserName, String strPwd) {
 		Transaction tx = null;
 		List list = null;
 		try {
 			Session session = hib.openSession();                    //调用公共类的开启session方法．
 			tx = (Transaction) session.beginTransaction();  //开启事物
-			Query query = session.createQuery("from User as u where u.userName=:strUserName and u.pwd=:strPwd");  //应用HQL检索查找满足条件的集合
+			Query query = session.createQuery("from userinfo as u where u.username=:strUserName and u.pass=:strPwd");  //应用HQL检索查找满足条件的集合
 			query.setString("strUserName", strUserName);     //动态绑定参数
 			query.setString("strPwd", strPwd);
 			list = query.list();                             //list方法用来执行HQL语句
@@ -29,6 +30,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	 查出所有用户并分页
+	@SuppressWarnings("rawtypes")
 	public static List findUser(int recPerPage,int pages) {
 		Transaction tx = null;
 		List list = null;
@@ -94,6 +96,7 @@ public class HibernateUtil {
 		}
   }
 //	 查找用户id方法
+	@SuppressWarnings("rawtypes")
 	public static List findUserId(int intId) {
 		Transaction tx = null;
 		List list = null;
@@ -114,6 +117,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	 按部门查找用户
+	@SuppressWarnings("rawtypes")
 	public static List findUser(String strBranch,int intFrist,int intPages) {
 		Transaction tx = null;
 		List list = null;
@@ -151,6 +155,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	查找优秀员工
+	@SuppressWarnings("rawtypes")
 	public static List findU() {
 		Transaction tx = null;
 		List list = null;
@@ -164,13 +169,13 @@ public class HibernateUtil {
 			tx.commit();
 			hib.closeSession(session);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			tx.rollback(); 
 		}
 		return list;
 	}
    // 查找菜单
+	@SuppressWarnings("rawtypes")
 	public static List findMenu(int intMendId) {
 		Transaction tx = null;
 		List list = null;
@@ -191,6 +196,7 @@ public class HibernateUtil {
 	}
    
  // 查出会议记录,并分页
+	@SuppressWarnings("rawtypes")
 	public static List finMeeting(int intFrint,int intpages) {
 		Transaction tx = null;
 		List list = null;
@@ -227,6 +233,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	 查出符合会议id集合
+	@SuppressWarnings("rawtypes")
 	public static List findMeetingid(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -272,6 +279,7 @@ public class HibernateUtil {
 		}
 	}
 //	 查出公告信息的记录
+	@SuppressWarnings("rawtypes")
 	public static List finplacard(int intFrist,int intpages) {
 		Transaction tx = null;
 		List list = null;
@@ -351,6 +359,7 @@ public class HibernateUtil {
 		
 	}
 	//按照id查找公告信息
+	@SuppressWarnings("rawtypes")
 	public static List finplacardId(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -369,6 +378,7 @@ public class HibernateUtil {
 		return list;
 	}
   //查找外出信息
+	@SuppressWarnings("rawtypes")
 	public static List finWaichu(int recPerPage,int pages) {
 		Transaction tx = null;
 		List list = null;
@@ -404,6 +414,7 @@ public class HibernateUtil {
 		return intCount;
 	}
  //	按照id查找外出详细信息
+	@SuppressWarnings("rawtypes")
 	public static List finwaichuId(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -467,6 +478,7 @@ public class HibernateUtil {
 		}
 	}
  //查找请假信息
+	@SuppressWarnings("rawtypes")
 	public static List findQingjia(int recPerPage,int  pages) {
 		Transaction tx = null;
 		List list = null;
@@ -541,6 +553,7 @@ public class HibernateUtil {
 	}
 
  //按照id号查找请假信息
+	@SuppressWarnings("rawtypes")
 	public static List findQingjia(int intid) {
 	    Transaction tx = null;
 		List list = null;
@@ -559,6 +572,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	查找请假信息
+	@SuppressWarnings("rawtypes")
 	public static List findchuchai(int recPerPage,int pages) {
 		Transaction tx = null;
 		List list = null;
@@ -594,6 +608,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	按照id号查找出差信息
+	@SuppressWarnings("rawtypes")
 	public static List findchuchai(int intid) {
 	    Transaction tx = null;
 		List list = null;
@@ -612,6 +627,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	查找上下班登记信息
+	@SuppressWarnings("rawtypes")
 	public static List findOnduty(int recPerPage,int pages) {
 		Transaction tx = null;
 		List list = null;
@@ -661,6 +677,7 @@ public class HibernateUtil {
 		}
 	}
 //	按照id号查找出差信息
+	@SuppressWarnings("rawtypes")
 	public static List findonduty(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -679,6 +696,7 @@ public class HibernateUtil {
 		return list;
 	}
 //查找企业计划信息
+	@SuppressWarnings("rawtypes")
 	public static List findqiye(int intFrist,int intPages) {
 		Transaction tx = null;
 		List list = null;
@@ -714,6 +732,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	查找企业计划表的id集合
+	@SuppressWarnings("rawtypes")
 	public static List findqiye(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -762,6 +781,7 @@ public class HibernateUtil {
 		
 	}
 //	查找部门计划信息
+	@SuppressWarnings("rawtypes")
 	public static List findbm(int intFrist,int intPages) {
 		Transaction tx = null;
 		List list = null;
@@ -797,6 +817,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	查找部门id集合　
+	@SuppressWarnings("rawtypes")
 	public static List findbmid(int intid) {
 	    Transaction tx = null;
 		List list = null;
@@ -844,6 +865,7 @@ public class HibernateUtil {
 		}
 		}
 //	查找个人计划信息
+	@SuppressWarnings("rawtypes")
 	public static List findperson(int intFrist,int intPages) {
 		Transaction tx = null;
 		List list = null;
@@ -879,6 +901,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	查找个人id集合　
+	@SuppressWarnings("rawtypes")
 	public static List findPerson(int intid) {
         Transaction tx = null;
 		List list = null;
@@ -940,6 +963,7 @@ public class HibernateUtil {
 		}
 	}
 	 //查找审核表的信息
+	@SuppressWarnings("rawtypes")
 	public static List findshenhe(int intFrist,int intPages) {
 		Transaction tx = null;
 		List list = null;
@@ -975,6 +999,7 @@ public class HibernateUtil {
 		return intCount;
 	}
  //查找审核id集合　
+	@SuppressWarnings("rawtypes")
 	public static List findShenheId(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -1036,6 +1061,7 @@ public class HibernateUtil {
 	}
 	 
 //	查找通讯组内信息
+	@SuppressWarnings("rawtypes")
 	public static List findTongxuns() {
 		Transaction tx = null;
 		List list = null;
@@ -1070,6 +1096,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	检索用户名是否可用　
+	@SuppressWarnings("rawtypes")
 	public static List findTonName(String name) {
 		Transaction tx = null;
 		List list = null;
@@ -1088,6 +1115,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	按照id查找通讯组内信息　
+	@SuppressWarnings("rawtypes")
 	public static List findTonId(int intid) {
 		Transaction tx = null;
 		List list = null;
@@ -1149,6 +1177,7 @@ public class HibernateUtil {
 		}
 	}
 //	查找通讯显示信息组
+	@SuppressWarnings("rawtypes")
 	public static List findTongxun(int intname1) {
 		Transaction tx = null;
 		List list = null;
@@ -1182,6 +1211,7 @@ public class HibernateUtil {
 		}
 	}
 	//	查找通讯类型方法并分页
+	@SuppressWarnings("rawtypes")
 	public static List findT(int intFrist,int intPages) {
 	    Transaction tx = null;
 		List list = null;
@@ -1201,6 +1231,7 @@ public class HibernateUtil {
 		return list;
 	}
 //	查找通讯类型方法并分页
+	@SuppressWarnings("rawtypes")
 	public static List findT() {
 		Transaction tx = null;
 		List list = null;
@@ -1234,6 +1265,7 @@ public class HibernateUtil {
 		return intCount;
 	}
 //	查找通讯类型方法
+	@SuppressWarnings("rawtypes")
 	public static List findT(int intId) {
 		Transaction tx = null;
 		List list = null;
@@ -1281,6 +1313,7 @@ public class HibernateUtil {
 		}
 	}
 //	查找通讯显示信息组
+	@SuppressWarnings("rawtypes")
 	public static List findTX(int intid) {
 		Transaction tx = null;
 		List list = null;
